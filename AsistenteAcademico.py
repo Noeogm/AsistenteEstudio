@@ -1,5 +1,13 @@
-def modo_ia_simulada(tema):
-    print("🤖 Activando modo asistente académico inteligente...\n")
+from tkinter import messagebox
+
+def modo_ia_simulada(materia):
+    mensaje = (
+        f"🧠 Explicación IA para '{materia}':\n"
+        f"No tengo aún una explicación específica para '{materia}', pero podés buscarlo en YouTube, Khan Academy o Wikipedia.\n"
+        f"📌 Consejo: tomá nota y agregalo a tu agenda si es un tema que viene en examen."
+    )
+    messagebox.showinfo("🤖 Asistente IA", mensaje)
+
 
     explicaciones = {
         "álgebra": "Podés repasar los conceptos clave de álgebra como variables, ecuaciones lineales y factorización. Recomendación: YouTube - 'Álgebra desde cero'.",
@@ -10,8 +18,8 @@ def modo_ia_simulada(tema):
         "historia": "Buscá líneas de tiempo o mapas mentales. El canal 'Academia Play' lo explica muy claro.",
     }
 
-    respuesta = explicaciones.get(tema.lower(),
-                                  f"No tengo aún una explicación específica para '{tema}', pero podés buscarlo en YouTube, Khan Academy o Wikipedia.")
+    respuesta = explicaciones.get(materia.lower(),
+                                  f"No tengo aún una explicación específica para '{materia}', pero podés buscarlo en YouTube, Khan Academy o Wikipedia.")
 
-    print(f"🧠 Explicación IA para '{tema}':\n{respuesta}")
+    print(f"🧠 Explicación IA para '{materia}':\n{respuesta}")
     print("📌 Consejo: tomá nota y agregalo a tu agenda si es un tema que viene en examen.")
